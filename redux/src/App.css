@@ -1,0 +1,40 @@
+.App {
+  min-height: 100vh;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+}
+
+.btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 100vw;
+}
+
+button {
+  cursor: pointer;
+  display: flex;
+  gap: 16px;
+  font-size: 24px;
+  font-weight: 200;
+  color: rgb(251, 153, 0);
+
+  height: 60px;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  padding: 0 3vw;
+  border-radius: 16px;
+  background-color: rgb(43, 43, 53);
+  box-shadow: -4px -4px 4px rgba(255, 255, 255, 0.0901960784),
+    4px 4px 4px rgba(0, 0, 0, 0.3);
+}
+
+.cash {
+  font-size: 4rem;
+}
+
+.customers {
+  margin-top: 15px;
+}
