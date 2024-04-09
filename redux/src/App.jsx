@@ -4,6 +4,8 @@ import {
   addCustomerAction,
   removeCustomerAction,
 } from "./store/customerReducer";
+import { fetchCustomers } from "./asyncActions/customers";
+import { addCushAction, getCushAction } from "./store/cashReducer";
 
 function App() {
   const dispatch = useDispatch();
@@ -11,10 +13,10 @@ function App() {
   const customers = useSelector((state) => state.customers.customers);
 
   const addCash = (cash) => {
-    dispatch({ type: "ADD_CASH", payload: cash });
+    dispatch(addCushAction(cash));
   };
   const getCash = (cash) => {
-    dispatch({ type: "GET_CASH", payload: cash });
+    dispatch(getCushAction(cash));
   };
 
   const addCustomer = (name) => {
@@ -36,24 +38,23 @@ function App() {
         <button onClick={() => addCash(Number(prompt()))}>
           Пополнить счет
         </button>
-
         <button onClick={() => getCash(Number(prompt()))}>
           Снять со счета
         </button>
       </div>
       <div className="btns">
         <button onClick={() => addCustomer(prompt())}>Добавить клиента</button>
-        <button onClick={() => getCash(Number(prompt()))}>
-          Удалить клиента
+        <button onClick={() => dispatch(fetchCustomers())}>
+          Получить клиентов из базы
         </button>
       </div>
       <div className="customers">
         {customers.length > 0 ? (
           <div style={{ fontSize: "2rem" }}>
-            {" "}
             Клиенты:
-            {customers.map((customer) => (
+            {customers.map((customer, i) => (
               <div
+                key={i}
                 onClick={() => removeCustomer(customer)}
                 style={{
                   fontSize: "2rem",
