@@ -2,10 +2,16 @@ import { useDispatch, useSelector } from "react-redux";
 import "./App.css";
 import {
   addCustomerAction,
+  fetchUser,
   removeCustomerAction,
 } from "./store/customerReducer";
 import { fetchCustomers } from "./asyncActions/customers";
-import { addCushAction, getCushAction } from "./store/cashReducer";
+import {
+  addCushAction,
+  asyncDecrementCash,
+  asyncIncrementCash,
+  getCushAction,
+} from "./store/cashReducer";
 
 function App() {
   const dispatch = useDispatch();
@@ -43,9 +49,22 @@ function App() {
         </button>
       </div>
       <div className="btns">
+        <button onClick={() => dispatch(asyncIncrementCash())}>
+          Увеличить баланс на 100
+        </button>
+        <button onClick={() => dispatch(asyncDecrementCash())}>
+          Уменьшить баланс на 100
+        </button>
+      </div>
+      <div className="btns">
         <button onClick={() => addCustomer(prompt())}>Добавить клиента</button>
         <button onClick={() => dispatch(fetchCustomers())}>
           Получить клиентов из базы
+        </button>
+      </div>
+      <div className="btns">
+        <button onClick={() => dispatch(fetchUser())}>
+          Получить одного клиента из базы
         </button>
       </div>
       <div className="customers">
