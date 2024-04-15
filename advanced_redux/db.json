@@ -1,0 +1,49 @@
+{
+  "posts": [
+    {
+      "id": "0f61",
+      "title": "",
+      "body": "new post"
+    },
+    {
+      "id": "9ad3",
+      "title": "new post2",
+      "body": "new post2"
+    },
+    {
+      "id": "c82f",
+      "title": "new post3",
+      "body": "new post3"
+    },
+    {
+      "id": "58fb",
+      "title": "3",
+      "body": "3"
+    },
+    {
+      "id": "bbff",
+      "title": "4",
+      "body": "4"
+    },
+    {
+      "id": "7782",
+      "title": "5",
+      "body": "5"
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "text": "a comment about post 1",
+      "postId": null
+    },
+    {
+      "id": "2",
+      "text": "another comment about post 1",
+      "postId": null
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
